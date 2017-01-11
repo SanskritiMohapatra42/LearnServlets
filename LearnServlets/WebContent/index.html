@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="ISO-8859-1">
+<title>Insert title here</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+<script>
+/*	var req;
+	function fun(){
+		req=new XMLHttpRequest(); 					//this object sends the request to the server & brings the response..called ajax engine
+		req.onreadystatechange=display; 			//onreadystatechange is a parameter that stores the name of the function to be excuted when state is changed(here it is disply)
+		req.open('GET','ajax',true); 				//here state changes to 1..this function has 3 parameter,1st the function name,url mapping of servlet,true param is given for asynchronous mode of commu.by default it is false(i.e synchronous)
+		req.send();									//here state changes to 2
+	}
+	
+	function display(){
+		alert(req.readyState);								//Each time state is changed,an alert box appers with the current state
+		if(req.readyState===4 && req.status===200)			//checks the state..if readyState(it is a variable) is 4, and status is 200(status 200 is for successful commu) then the lines are executed
+			{
+				document.getElementById("ajax-result").innerHTML=req.responseText;  	//here the html elemnet with id=ajax-result's inner html is modified to the response we have got from the server,which is stored in responseText parameter and called through req.
+			}
+	}*/
+	
+	$(document).ready(function(){
+		$("#ajax").click(function(){
+			$.ajax({url: "ajax", success: function(result){
+				$("#ajax-result").html(result);
+			}});
+		});
+	});
+	
+	
+</script>
+</head>
+<body>
+	<ul>
+		<li><a href="interface">Click here for magic!!!</a></li>
+		<li><a href="generic">Click here for more magic!!!!</a></li>
+		<li><a href="httpservlet?param=sanskriti">Click here for even more magic!!!!</a></li>
+	</ul>
+	<button id="ajax" onclick="fun()">Click here for ajax magic!</button>
+	<div id="ajax-result" style="border:1px solid black;"></div>
+</body>
+</html>

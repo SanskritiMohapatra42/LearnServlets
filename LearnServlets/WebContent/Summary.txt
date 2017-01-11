@@ -1,0 +1,12 @@
+> 	This is a learning project made by us to learn about Servlets.
+>	We can make servlets in 3 types:-
+		- By implementing the Servlet interface in our own class.
+			It contains 5 methods which need to b over ridden: init(),service() (the main logic is written here),destroy(),getServletConfig(),getServletInfo()
+		- By extending GenericServlet class in our own class.
+			Here wee need to override only the service method.
+		- By extending HttpServlet class in our own class.
+			Here we override the method by which http request is sent, Get,Post,Head,Put etc.
+
+>	We need to first define the content type of the displaying result by the function setContentType().
+>	For displaying purpose we use the obejct of PrintWriter class,by calling the write().
+		
